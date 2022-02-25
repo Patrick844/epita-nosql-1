@@ -14,12 +14,9 @@ router.get('/count',async (request,response) =>{
     const ctrycount=[]
     console.log(continents[0].countries.length)
     continents.forEach(c => {
-
         
        ctrycount.push({
 
-            
-        
             key : c.name,
             values : c.countries.length
         }) 
@@ -43,13 +40,6 @@ router.get('/count/:key',async (request,response) =>{
 
     console.log(continents.countries.length)
 
-    
-    
-
-
-  
-
-  
     response.status(200).json(continents.countries[3]);
 })
 

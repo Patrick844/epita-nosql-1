@@ -30,7 +30,7 @@ router.get('/:id', async (request, response) => {
 });
 
 router.post('/', async (request, response) => {
-    const {name, isoCode,cont} = request.body
+    const {name, isoCode,cont,population} = request.body
 
 
     const continentGet = await ContinentModel.findOne({
@@ -44,7 +44,8 @@ router.post('/', async (request, response) => {
     const country = await CountryModel.create({
         name: name,
         isoCode,
-        continent : cont_id
+        continent : cont_id,
+        population
         
 
     });
