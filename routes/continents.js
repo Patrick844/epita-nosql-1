@@ -39,13 +39,17 @@ router.get('/count/:key',async (request,response) =>{
 
         name : key
 
-    }).populate('countries');
+    }).populate({path:'countries', options:{ sort: {"name":1}}});
 
     console.log(continents.countries.length)
 
     
     
 
+
+  
+
+  
     response.status(200).json(continents.countries[3]);
 })
 

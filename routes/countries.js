@@ -105,7 +105,7 @@ router.get('/filter/:key', async (request, response) => {
 
     const key=request.params.key
     
-    const reg= new RegExp("^\\w*"+key+"\\w*$");
+    const reg= new RegExp("^.*["+key+"||"+key.toUpperCase()+"]"+".*$");
 
 
     const countries = await CountryModel.find({
